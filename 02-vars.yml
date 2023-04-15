@@ -46,3 +46,10 @@
     - name:  access  fact
       ansible.builtin.debug:
         msg: ansible HOST name == {{ansible_fqdn}}
+
+- name: Register a variable
+  hosts: all
+  connection: local
+  tasks:
+    - name: run a shell command
+      ansible.builtin.shell: uptime
