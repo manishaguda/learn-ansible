@@ -18,7 +18,7 @@
     - name:  access  veriable
       ansible.builtin.debug:
         msg: URL == {{URL}}
-
+## vars_files can also be declared on task level.
 
 - name: Declare variable at task level
   hosts: all
@@ -30,3 +30,11 @@
       vars:
         URL: task.example.com
 
+
+- name: Declare variable from inventory file
+  hosts: all
+  connection: local
+  tasks:
+    - name:  access  veriable
+      ansible.builtin.debug:
+        msg: URL == {{URL}}
