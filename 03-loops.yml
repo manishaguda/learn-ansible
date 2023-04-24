@@ -1,0 +1,14 @@
+- name: Demo On loops
+  hosts: all
+    - name: Print Fruit Name
+      debug:
+        msg:fruit Name Is {{ item }}
+      loop:
+        - apple
+        - banana
+    - name: Print Fruit Name & Quantity
+      debug:
+        msg: Fruit Name is {{ item.name }}, & Quantity Name is {{ item.name }}
+      loop:
+        - { name: "apple", quantity: 100}
+        - { name: "banana",quantity: 200}
